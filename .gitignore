@@ -24,4 +24,6 @@ _testmain.go
 *.prof
 
 .vscode/
-utils/mdb-ver/mdb-ver
+
+mdb-*
+dbCustomers.mdb

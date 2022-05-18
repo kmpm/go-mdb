@@ -3,6 +3,7 @@ package data
 import (
 	"bytes"
 	"encoding/binary"
+
 	"github.com/yageek/go-mdb/version"
 )
 

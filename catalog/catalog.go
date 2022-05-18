@@ -2,13 +2,14 @@ package catalog
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/yageek/go-mdb/filepage"
 	"github.com/yageek/go-mdb/pages"
 	"github.com/yageek/go-mdb/pages/data"
 	"github.com/yageek/go-mdb/pages/definition"
 	"github.com/yageek/go-mdb/pages/tabledefinition"
 	"github.com/yageek/go-mdb/version"
-	"os"
 )
 
 // Catalog represents the structure of the access files
@@ -78,12 +79,17 @@ func (c *Catalog) Read() error {
 	c.mSysObjectsDefinition = msysObjects
 	// Looks for the data pages for the MSysObjects
 
+	fmt.Printf("msysObjects: %+v\n", msysObjects)
+
 	for c.nextDataPageForTDEF(0x02) {
 		row, err := data.NewPage(c.scanner.Page(), c.jetVersion)
 		if err != nil {
 			return err
 		}
-		fmt.Println("Data page for TDEF found:", row)
+		// fmt.Printf("row.Header: %+v\n", row.Header)
+
+		fmt.Printf("Data page for TDEF found: Header= %+v, RowDefinition=%v\n", row.Header, row.RowDefinition)
+
 	}
 
 	return nil

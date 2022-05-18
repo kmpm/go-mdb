@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/yageek/go-mdb/test_databases"
+	testdatabases "github.com/yageek/go-mdb/test_databases"
 )
 
 func TestMSysObjects(t *testing.T) {

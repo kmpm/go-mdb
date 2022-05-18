@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/yageek/go-mdb/filepage"
-	"github.com/yageek/go-mdb/test_databases"
+	testdatabases "github.com/yageek/go-mdb/test_databases"
 	"github.com/yageek/go-mdb/version"
 )
 
